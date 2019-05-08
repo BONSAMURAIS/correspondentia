@@ -1,5 +1,7 @@
 # Correspondentia
 
+[![Build Status](https://travis-ci.org/BONSAMURAIS/correspondentia.svg?branch=master)](https://travis-ci.org/BONSAMURAIS/correspondentia) [![Build status](https://ci.appveyor.com/api/projects/status/2ktjyy6bn8vao95k?svg=true)](https://ci.appveyor.com/project/cmutel/correspondentia)
+
 Python library to map correspondence tables in different formats to data structures.
 
 A quick example:

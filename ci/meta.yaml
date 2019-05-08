@@ -22,7 +22,7 @@ requirements:
 
 test:
   imports:
-    - {{ name }}
+    - correspondentia
 
 about:
   home: https://github.com/BONSAMURAIS/correspondentia
