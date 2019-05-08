@@ -29,6 +29,49 @@ list(match_fields(my_data, numbers_to_names, "count"))
 
 ```
 
+`match_fields` return a generator.
+
+## Input data
+
+Input data should be an iterable of objects supporting the dictionary interface.
+
+## Input tables
+
+`correspondentia` currently can import the following formats:
+
+* CSVs following the simple schema
+
+We plan to also eventually support the following:
+
+* RDF (Turtle) correspondence tables following the BONSAI spec
+* CSVs with BONSAI ontology predicates
+
+You can also write custom importers, or define correspondence tables manually. In either case, the correspondence table data should include at least the following fields (additional fields are also allowed):
+
+```python
+
+{
+    "label in origin schema (usually str, but can be int or float)": {
+        "value": "label in destination schema (usually str, but can be int or float)",
+        "type": one of ["exact", "disaggregation"],
+        "weight": float, # optional
+    }
+}
+
+```
+
+## Simple CSV schema for input tables
+
+A CSV with two required and one optional columns.
+
+* First column: Label in origin schema
+* Second column: Label in destination schema
+* Third column (optional): Weight used for disaggregation.
+
+If matching is 1-N or N-1, just use multiple rows with redundant labels.
+
+CSVs should follow the Open Knowledge CSV spec. Do not use column headers.
+
 ## Installation
 
 Installation via normal pathways; currently has no dependencies.
