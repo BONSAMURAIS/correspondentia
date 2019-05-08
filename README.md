@@ -1,17 +1,34 @@
-# Project name
+# Correspondentia
 
-Basic project description
+Python library to map correspondence tables in different formats to data structures.
 
-Badges in Markdown format:
+A quick example:
 
-* For readthedocs, click on the info button next to the badge in https://readthedocs.org/projects/whatever/, and copy the markdown code
-* For travis, click on the badge in https://travis-ci.org/BONSAMURAIS/whatever, and copy the markdown code
-* For appveyor, go to the projects settings page, and then click on "badges", and copy the markdown code
+    from correspondentia import match_fields
+
+    numbers_to_names = {
+        1: [{"value": "one", "type": "exact"}],
+        2: [{"value": "two", "weight": 0.5, "type": "disaggregation"},
+            {"value": "deux", "weight": 0.5, "type": "disaggregation"}],
+    }
+
+    my_data = [{
+        'count': 1,
+        'name': 'foo'
+    }, {
+        'count': 2,
+        'name': 'bar'
+    }]
+
+    list(match_fields(my_data, numbers_to_names, "count"))
+    > [{'count': 'one', 'name': 'foo'},
+       {'count': 'two', 'name': 'bar', 'correspondentia_allocation': 0.5},
+       {'count': 'deux', 'name': 'bar', 'correspondentia_allocation': 0.5}]
 
 ## Installation
 
-Details on how to install the package
+Installation via normal pathways; currently has no dependencies.
 
 ## Contributing
 
-Details on how to contribute
+Follow standard fork/pull-request procedure.
