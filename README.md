@@ -4,26 +4,30 @@ Python library to map correspondence tables in different formats to data structu
 
 A quick example:
 
-    from correspondentia import match_fields
+```python
 
-    numbers_to_names = {
-        1: [{"value": "one", "type": "exact"}],
-        2: [{"value": "two", "weight": 0.5, "type": "disaggregation"},
-            {"value": "deux", "weight": 0.5, "type": "disaggregation"}],
-    }
+from correspondentia import match_fields
 
-    my_data = [{
-        'count': 1,
-        'name': 'foo'
-    }, {
-        'count': 2,
-        'name': 'bar'
-    }]
+numbers_to_names = {
+    1: [{"value": "one", "type": "exact"}],
+    2: [{"value": "two", "weight": 0.5, "type": "disaggregation"},
+        {"value": "deux", "weight": 0.5, "type": "disaggregation"}],
+}
 
-    list(match_fields(my_data, numbers_to_names, "count"))
-    > [{'count': 'one', 'name': 'foo'},
-       {'count': 'two', 'name': 'bar', 'correspondentia_allocation': 0.5},
-       {'count': 'deux', 'name': 'bar', 'correspondentia_allocation': 0.5}]
+my_data = [{
+    'count': 1,
+    'name': 'foo'
+}, {
+    'count': 2,
+    'name': 'bar'
+}]
+
+list(match_fields(my_data, numbers_to_names, "count"))
+> [{'count': 'one', 'name': 'foo'},
+   {'count': 'two', 'name': 'bar', 'correspondentia_allocation': 0.5},
+   {'count': 'deux', 'name': 'bar', 'correspondentia_allocation': 0.5}]
+
+```
 
 ## Installation
 
