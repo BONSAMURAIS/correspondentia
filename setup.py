@@ -31,12 +31,13 @@ setup(
     packages=packages,
     author="Chris Mutel",
     author_email="cmutel@gmail.com",
-    license=open('LICENSE').read(),
+    license="BSD 3-clause",
     # Only if you have non-python data (CSV, etc.). Might need to change the directory name as well.
     # package_data={'your_name_here': package_files(os.path.join('correspondentia', 'data'))},
     install_requires=[
     ],
     url="https://github.com/BONSAMURAIS/correspondentia",
+    long_description_content_type='text/markdown',
     long_description=open('README.md').read(),
     description='your_name_here',
     classifiers=[
