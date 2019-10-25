@@ -1,3 +1,6 @@
+# DEPRECATED WARNING
+We are not using *correspondentia* anymore
+
 # Correspondentia
 
 [![Build Status](https://travis-ci.org/BONSAMURAIS/correspondentia.svg?branch=master)](https://travis-ci.org/BONSAMURAIS/correspondentia) [![Build status](https://ci.appveyor.com/api/projects/status/2ktjyy6bn8vao95k?svg=true)](https://ci.appveyor.com/project/cmutel/correspondentia)
